@@ -146,7 +146,6 @@ function reset_cells()
 
 function tick()
 {
-	
 	ticktime = millis();
 	calc_cellhp();
 	update_cells();
@@ -168,7 +167,7 @@ function draw()
 	}
 }
 
-function mouseClicked()
+function mousePressed()
 {
 	if (mouseX < 1 || mouseY < 1 || mouseX >= width || mouseY >= height)
 		return ;
@@ -177,14 +176,6 @@ function mouseClicked()
 	cells[y][x] = (cells[y][x] + 1) % 2;
 }
 
-function touchEnded()
-{
-	if (mouseX < 1 || mouseY < 1 || mouseX >= width || mouseY >= height)
-		return ;
-	var x = int(mouseX / gsize);
-	var y = int(mouseY / gsize);
-	cells[y][x] = (cells[y][x] + 1) % 2;
-}
 
 function keyPressed()
 {
